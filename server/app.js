@@ -1,5 +1,9 @@
-{
-  "data":[
+const express = require('express');
+
+const app= express();
+const cors = require('cors')
+
+const data = [
     {
       "name" : "TSC",
       "website":"http://tsc.in",
@@ -86,4 +90,11 @@
 
     }
   ]
-}
+
+app.use(cors());
+
+app.get('/api/company',(req,res)=>{
+  res.json(data);
+})
+
+app.listen(3001,()=>{console.log(`server is listening at port 3001`);})

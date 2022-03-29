@@ -69,7 +69,10 @@
   <script>
       $(document).ready( function () {
       $('#myTable').DataTable({
-        ajax: './data.json',
+        ajax: {
+        url: 'http://localhost:3001/api/company',
+        dataSrc: ''
+    },
         columns : [
           {data: 'name'},
           {data : 'website'},
