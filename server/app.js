@@ -3,6 +3,8 @@ const express = require('express');
 const app= express();
 const cors = require('cors')
 
+const button_tags ="<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='bg-danger text-light' >Edit</button>/<button onClick ='onDelete(this)' class='bg-danger text-light' >Delete</button>"
+
 const data = [
     {
       "name" : "TSC",
@@ -12,7 +14,7 @@ const data = [
       "city" : "Mumbai",
       "state" : "MH",
       "country" : "IN",
-      "edit" : "<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight); ' class='bg-danger text-light' >Edit</button>/<button onClick ='onDelete(this)' class='bg-danger text-light' >Delete</button>"
+      "edit" : button_tags
     },
     {
       "name" : "MegaData",
@@ -22,8 +24,7 @@ const data = [
       "city" : "Mumbai",
       "state" : "MH",
       "country" : "IN",
-      "edit" : "<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight); ' class='bg-danger text-light' >Edit</button>/<button onClick ='onDelete(this)' class='bg-danger text-light' >Delete</button>"
-
+      "edit" : button_tags
     },
     {
       "name" : "new solutions",
@@ -33,8 +34,7 @@ const data = [
       "city" : "Mumbai",
       "state" : "MH",
       "country" : "IN",
-      "edit" : "<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='bg-danger text-light' >Edit</button>/<button onClick ='onDelete(this)' class='bg-danger text-light' >Delete</button>"
-
+      "edit" : button_tags
     },
     {
       "name" : "neo",
@@ -44,8 +44,7 @@ const data = [
       "city" : "Mumbai",
       "state" : "MH",
       "country" : "IN",
-      "edit" :"<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='bg-danger text-light' >Edit</button>/<button onClick ='onDelete(this)' class='bg-danger text-light' >Delete</button>"
-
+      "edit" :button_tags
     },
     {
       "name" : "N-gen",
@@ -55,8 +54,7 @@ const data = [
       "city" : "Mumbai",
       "state" : "MH",
       "country" : "IN",
-      "edit" : "<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='bg-danger text-light' >Edit</button>/<button onClick ='onDelete(this)' class='bg-danger text-light' >Delete</button>"
-
+      "edit" : button_tags
     },
     {
       "name" : "info",
@@ -66,7 +64,7 @@ const data = [
       "city" : "Mumbai",
       "state" : "MH",
       "country" : "IN",
-      "edit" : "<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='bg-danger text-light' >Edit</button>/<button onClick ='onDelete(this)' class='bg-danger text-light' >Delete</button>"
+      "edit" : button_tags
     },
     {
       "name" : "Iccenture",
@@ -76,7 +74,7 @@ const data = [
       "city" : "Mumbai",
       "state" : "MH",
       "country" : "IN",
-      "edit" : "<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='bg-danger text-light' >Edit</button>/<button onClick ='onDelete(this)' class='bg-danger text-light' >Delete</button>"
+      "edit" : button_tags
     },
     {
       "name" : "Kignozant",
@@ -86,8 +84,7 @@ const data = [
       "city" : "Mumbai",
       "state" : "MH",
       "country" : "IN",
-      "edit" :"<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='bg-danger text-light' >Edit</button>/<button onClick ='onDelete(this)' class='bg-danger text-light' >Delete</button>"
-
+      "edit" :button_tags
     }
   ]
 
