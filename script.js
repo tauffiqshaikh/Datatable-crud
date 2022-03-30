@@ -48,7 +48,7 @@ function insertNewRecord(data){
   var td7 = tr.insertCell(6);
   td7.innerHTML = data.country;
   var td8 = tr.insertCell(7);
-  td8.innerHTML = "<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='bg-danger text-light' >Edit</button>/<button onClick ='onDelete(this)' class='bg-danger text-light' >Delete</button>";
+  td8.innerHTML = "<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='btn btn-warning' >Edit</button>&nbsp<button onClick ='onDelete(this)' class='btn btn-danger' >Delete</button>";
 }
 
 const onEdit=(td)=>{

@@ -3,7 +3,7 @@ const express = require('express');
 const app= express();
 const cors = require('cors')
 
-const button_tags ="<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='bg-danger text-light' >Edit</button>/<button onClick ='onDelete(this)' class='bg-danger text-light' >Delete</button>"
+const button_tags ="<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='btn btn-warning' >Edit</button>&nbsp<button onClick ='onDelete(this)' class='btn btn-danger' >Delete</button>"
 
 const data = [
     {

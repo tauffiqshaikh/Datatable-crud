@@ -20,13 +20,13 @@
 
   <div class="App container-fluid" style="padding: 0;" >
 
-    <div class=" row jumbotron bg-danger" >
+    <div class=" row jumbotron bg-primary" >
         <h1 class="text-light display-7" >RecruitCRM</h1>
       <h1 class="display-5 text-light">LIST OF COMPANIES</h1>
 
     </div>
   
-    <a style="margin-left: 90%; margin-bottom: 20px; margin-top: 20px;" href="./login.html" class="button btn btn-outline-danger">Logout</a>
+    <a style="margin-left: 90%; margin-bottom: 20px; margin-top: 20px;" href="./login.html" class="button btn btn-outline-primary">Logout</a>
 
     <div class="container-fluid row-col-md-12 " >
         <table id="myTable" class="display company">
@@ -48,7 +48,7 @@
         </table>
 
         <br><br>
-        <h2 class="text-danger" >Add or edit data in table here</h2>
+        <p class="text-primary display-6 font-weight-bold " >ADD OR EDIT THE DATA IN TABLE HERE</p>
 
         <div class="container col-md-4 " >
           <form onsubmit="event.preventDefault(); onFormSubmit()" >
@@ -59,12 +59,12 @@
           <input class="form-control mb-2 p-2 " required type="text" id="city" placeholder="city">
           <input class="form-control mb-2 p-2 " required type="text" id="state" placeholder="state" >
           <input class="form-control mb-2 p-2 " required type="text" id="country" placeholder="country">
-          <input class="form-control btn-block bg-danger text-light" type="submit" id="submit" >
+          <input class="form-control btn btn-primary text-light" type="submit" id="submit" >
             </form>
         </div>
 <br><br><br>
-<h2 class="text-danger" >THANK YOU</h2>
-    </div>
+<h2 class="text-primary" >THANK YOU</h2>
+    </p>
   </div>
   <script>
       $(document).ready( function () {
