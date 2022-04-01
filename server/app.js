@@ -10,17 +10,14 @@ mongoose.connect('mongodb://localhost:27017/CRM',()=>{
   console.log("DB CONNECTED");
 })
 
-const static_path = path.join(__dirname, '../client/home.html')
 
 app.use(express.json())
 app.use(cors());
-app.use(express.static(static_path))
 
-const button_tags ="<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='btn btn-warning' >Edit</button>&nbsp<button onClick ='onDelete(this)' class='btn btn-danger' >Delete</button>"
+const button_tags ="<button onClick ='onEdit(this); window.scrollTo(0,document.body.scrollHeight);' class='btn btn-warning' >Edit</button>&nbsp<button onClick =onDelete(this);' class='btn btn-danger' >Delete</button>"
 
 
 app.get('/api/company',(req,res)=>{
-  console.log(static_path);
   Post.find()
   .then(data=>{res.json(data)})
 })

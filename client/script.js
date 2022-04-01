@@ -21,21 +21,46 @@ const PostData = async()=>{
   console.log(response);
 }
 
-const DeleteData = async()=>{
-  await fetch('http://localhost:3001/api/company',
-  {method:"DELETE"})
+const DeleteData = async(td)=>{
+  console.log(td.parentElement.parentElement.cells[0]);
+  await fetch(`http://localhost:3001/api/company/${td.parentElement.parentElement.cells[0].innerHTML}`,{
+    method : 'DELETE',
+    headers : {
+      'Content-type' : 'application/json'
+    }
+  })
+}
+
+const EditData = (td) =>{
+  const formData = readFormData();
+  const {name, website, phone, address, city , state, country} = formData;
+  console.log(name);
+  fetch(`http://localhost:3001/api/company/${td.parentElement.parentElement.cells[0].innerHTML}`,{
+    method : 'PATCH',
+    headers : {
+      'Content-type' : 'application/json'
+    },
+    body: JSON.stringify({
+      name, website, phone, address, city, state, country
+    })
+  })
+  .then(()=>console.log())
+  .then(response=>response.json())
+  .then(json=>console.log(json))
 }
 
 var selectedRow = null
 
 function onFormSubmit(){
-PostData();
 var formData = readFormData();
-if(selectedRow == null)
+if(selectedRow == null){
+  PostData();
   insertNewRecord(formData);
-else 
+}else 
+  {
   updateRecord(formData)
-
+  EditData(td);
+}
 resetForm();
 }
 
@@ -94,6 +119,7 @@ const updateRecord=(formData)=>{
 }
 
 const resetForm=()=>{
+
   document.getElementById('name').value = '';
   document.getElementById('website').value = '';
   document.getElementById('phone').value = '';
@@ -107,6 +133,7 @@ const resetForm=()=>{
 
 const onDelete = (td) => {
 if(confirm("Are you sure you want to delete this record?")){
+  DeleteData(td);
   row = td.parentElement.parentElement;
   document.getElementById('myTable').deleteRow(row.rowIndex);
   resetForm();
