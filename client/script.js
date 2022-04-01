@@ -1,14 +1,35 @@
 function preventBack() {
   window.history.forward(); 
 }
-
 setTimeout("preventBack()", 0);
-
 window.onunload = function () { null };
+
+const PostData = async()=>{
+  const formData = readFormData();
+  const {name, website, phone, address, city , state, country} = formData;
+  const res = await fetch('http://localhost:3001/api/company',{
+    method : "POST",
+    headers:{
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify({
+      name, website, phone, address, city, state, country
+    })
+  })
+
+  const response = await res.json();
+  console.log(response);
+}
+
+const DeleteData = async()=>{
+  await fetch('http://localhost:3001/api/company',
+  {method:"DELETE"})
+}
 
 var selectedRow = null
 
 function onFormSubmit(){
+PostData();
 var formData = readFormData();
 if(selectedRow == null)
   insertNewRecord(formData);
